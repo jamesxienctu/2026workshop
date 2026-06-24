@@ -22,19 +22,14 @@ form.addEventListener("submit", async (event) => {
   setStatus("送出中...");
 
   try {
-    const response = await fetch(APPS_SCRIPT_URL, {
+    await fetch(APPS_SCRIPT_URL, {
       method: "POST",
-      mode: "cors",
+      mode: "no-cors",
       headers: {
         "Content-Type": "text/plain;charset=utf-8"
       },
       body: JSON.stringify(payload)
     });
-
-    const result = await response.json();
-    if (!response.ok || !result.ok) {
-      throw new Error(result.error || "送出失敗");
-    }
 
     form.reset();
     setStatus("報名成功，資料已送出。", "success");

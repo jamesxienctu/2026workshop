@@ -1,9 +1,13 @@
 function doPost(e) {
+  const lock = LockService.getScriptLock();
+
   try {
+    lock.waitLock(10000);
+
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
     ensureHeaderRow_(sheet);
 
-    const data = JSON.parse(e.postData.contents || "{}");
+    const data = parseRequestData_(e);
     sheet.appendRow([
       new Date(),
       data.name || "",
@@ -16,7 +20,23 @@ function doPost(e) {
     return json_({ ok: true });
   } catch (error) {
     return json_({ ok: false, error: error.message });
+  } finally {
+    if (lock.hasLock()) {
+      lock.releaseLock();
+    }
   }
+}
+
+function parseRequestData_(e) {
+  if (e && e.postData && e.postData.contents) {
+    try {
+      return JSON.parse(e.postData.contents);
+    } catch (error) {
+      return e.parameter || {};
+    }
+  }
+
+  return e.parameter || {};
 }
 
 function ensureHeaderRow_(sheet) {
