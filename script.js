@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx1PYzFAmufvV3jR-_GJfSeoB_AR2MYhdc46AR9NKPuLvLnCZFkUl3H3qZru2eSGo4E/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzJ_YSCynTPlwtv21WHcdTjOUdYCUTlpCwdtXtsYSVEpg9xbWERO_duFGaXWFCEDMb3/exec";
 
 const form = document.querySelector("#signup-form");
 const statusText = document.querySelector("#form-status");
