@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2026時間設計半日工作坊</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="title-row" aria-labelledby="event-title">
+        <p class="eyebrow">Half-day Workshop</p>
+        <h1 id="event-title">2026時間設計半日工作坊</h1>
+      </section>
+
+      <section class="image-row" aria-label="活動圖片">
+        <img src="cover.jpg" alt="2026時間設計半日工作坊活動視覺" class="cover-image">
+      </section>
+
+      <section class="details-row" aria-label="活動內容與報名表單">
+        <article class="program-panel">
+          <h2>活動內容</h2>
+          <ol class="schedule-list">
+            <li><time>8:00</time><span>報到</span></li>
+            <li><time>9:00</time><span>場次一</span></li>
+            <li><time>10:00</time><span>break time</span></li>
+            <li><time>10:30</time><span>場次二</span></li>
+            <li><time>11:30</time><span>Q&amp;A</span></li>
+            <li><time>12:00</time><span>活動結束</span></li>
+          </ol>
+        </article>
+
+        <article class="form-panel">
+          <h2>報名表單</h2>
+          <form id="signup-form">
+            <label>
+              <span>姓名</span>
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label>
+              <span>email</span>
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label>
+              <span>電話</span>
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+            </label>
+            <label>
+              <span>單位</span>
+              <input name="organization" autocomplete="organization" required>
+            </label>
+            <label>
+              <span>職稱</span>
+              <input name="title" autocomplete="organization-title" required>
+            </label>
+            <button type="submit">送出報名</button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
