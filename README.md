@@ -4,7 +4,7 @@
 
 ## GitHub Pages
 
-Pages 網址：部署後填入
+Pages 網址：https://jamesxienctu.github.io/2026workshop/
 
 ## Google Sheet 與 Apps Script 設定
 
